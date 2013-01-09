@@ -22,7 +22,7 @@ namespace RPGGame
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";	            
-			graphics.IsFullScreen = true;		
+			graphics.IsFullScreen = false;				//Turn off full screen.
 		}
 
 		/// <summary>
@@ -35,7 +35,8 @@ namespace RPGGame
 		{
 			// TODO: Add your initialization logic here
 			base.Initialize ();
-				
+			graphics.PreferredBackBufferHeight = 600;
+			graphics.PreferredBackBufferWidth = 800;
 		}
 
 		/// <summary>
@@ -57,10 +58,8 @@ namespace RPGGame
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update (GameTime gameTime)
 		{
-			// For Mobile devices, this logic will close the Game when the Back button is pressed
-			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed) {
-				Exit ();
-			}
+
+
 			// TODO: Add your update logic here			
 			base.Update (gameTime);
 		}
@@ -71,7 +70,7 @@ namespace RPGGame
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear (Color.AntiqueWhite);
 		
 			//TODO: Add your drawing code here
             
